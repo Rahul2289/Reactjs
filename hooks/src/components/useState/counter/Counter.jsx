@@ -17,7 +17,8 @@ const Counter = () => {
     setCount(0);
   };
   return (
-    <div className="container">
+    <div className="Countercontainer">
+      <h3>COUNTER</h3>
       <div className="counter-container">
         <div onClick={decrementCount} className="decrement-count">
           <MinusOutlined className="minus" />

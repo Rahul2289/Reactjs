@@ -1,7 +1,6 @@
-.container {
-  border: 1px solid black;
+.Countercontainer {
   width: 100%;
-  height: 250px;
+  height: 350px;
   display: flex;
   flex-direction: column;
   background-color: #0093e9;
@@ -106,4 +105,13 @@ span {
   background-position: right center; /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
+}
+
+h3 {
+  color: #fff;
+  text-shadow: 4px 3px 5px rgba(0, 0, 0, 0.62);
+  text-align: center;
+  padding: 2px;
+  font-size: 22px;
+  font-weight: 600;
 }
