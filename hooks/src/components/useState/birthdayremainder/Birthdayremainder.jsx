@@ -15,12 +15,12 @@ const Birthdayremainder = () => {
   return (
     <div className="Birthdaycontainer">
       <h2>Birthday remainder</h2>
-      <h1>({people.length}) birthdays today</h1>
+      <h2>({people.length}) birthdays today</h2>
       <div className="">
         {people.map(({ id, name, age }) => {
           return (
             <div className="" key={id}>
-              <h1>
+              <h1 style={{ color: "black" }}>
                 {name} <>(age:{age})</>
               </h1>
             </div>

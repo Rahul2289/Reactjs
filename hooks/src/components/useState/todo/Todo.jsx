@@ -25,7 +25,7 @@ const Todo = () => {
     <div className="Todocontainer">
       <h1>TODO</h1>
       <form onSubmit={handleSubmit} className="form-container">
-        <div className="input">
+        <div className="input-container">
           <input
             className="text"
             type="text"
@@ -35,7 +35,9 @@ const Todo = () => {
           />
         </div>
         <div className="btn-container">
-          <input type="submit" value="add" className="btn-grad"></input>
+          <button type="submit" value="add" className="btn-grad">
+            ADD
+          </button>
         </div>
       </form>
 
@@ -43,10 +45,17 @@ const Todo = () => {
         {todos.map((list, index) => {
           return (
             <div className="list" key={index}>
-              <h1 className="items">{list}</h1>
-              <button onClick={() => delatehandler(index)} className="btn-grad">
-                Delate
-              </button>
+              <div className="items">
+                <h1>{list}</h1>
+              </div>
+              <div className="btn-container">
+                <button
+                  onClick={() => delatehandler(index)}
+                  className="btn-grad"
+                >
+                  Delete
+                </button>
+              </div>
             </div>
           );
         })}
