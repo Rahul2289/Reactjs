@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import "./reviews.css";
 import ReviewData from "../Reviews/Reviewdata";
-import { LeftOutlined, RightOutlined } from "@ant-design/icons";
+import {
+  LeftOutlined,
+  RightOutlined,
+  MinusOutlined,
+  PlusOutlined,
+} from "@ant-design/icons";
 
 const Reviews = () => {
   const [index, setIndex] = useState(0);
+  const [Info, setInfo] = useState(false);
   const { id, name, info, image } = ReviewData[index];
 
   const checkNumber = (number) => {
@@ -42,8 +48,37 @@ const Reviews = () => {
           />
         </div>
         <div className="info-container">
-          <h1 style={{ color: "black" }}>{name}</h1>
-          <p>{info}</p>
+          <div className="name-btn-container">
+            <h1 style={{ color: "black" }}>{name}</h1>
+            <div
+              className="btn-grad"
+              style={{ width: "0px", height: "0px" }}
+              onClick={() => {
+                setInfo(!Info);
+              }}
+            >
+              {!Info ? (
+                <PlusOutlined
+                  style={{
+                    position: "relative",
+                    top: "-10px",
+                    left: "-10px",
+                    fontSize: "20px",
+                  }}
+                />
+              ) : (
+                <MinusOutlined
+                  style={{
+                    position: "relative",
+                    top: "-10px",
+                    left: "-10px",
+                    fontSize: "20px",
+                  }}
+                />
+              )}
+            </div>
+          </div>
+          {Info && <p className="info">{info}</p>}
         </div>
         <div className="btn">
           <div className="btn-grad" onClick={preBtnHandle}>
